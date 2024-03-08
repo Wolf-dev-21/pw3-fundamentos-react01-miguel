@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 function App() {
 
+  //Estado de dado
   const [nome , setNome] = useState();
 
   const [email , setEmail] = useState('');
@@ -15,48 +16,47 @@ function App() {
 
 
 
-
   function cadastro(event){
     event.preventDefault();
-    // alert('monke cadastred')
+    // alert('Teste de Subimit')
     alert(`NOME: ${nome} EMAIL: ${email} SENHA: ${senha}`)
   }
 
 
-
   return (
+
     <div className="App">
+
       <h1>Formulario de cadastro</h1>
-      <form onSubmit={cadastro} className='form'>
-        <input 
-          type='text' 
-          required 
-          placeholder='Digite teu nome'
-          value={nome}
-          onChange={(event)=>{setNome(event.target.value)}}
-          >
+        <form onSubmit={cadastro} className='form'>
+          <input 
+            type='text' 
+            required 
+            placeholder='Digite teu nome'
+            value={nome}
+            onChange={(event)=>{setNome(event.target.value)}}
+          />
           
-        </input>
-        <input 
-          type='text' 
-          required 
-          placeholder='Digite teu email'
-          value={email}
-          onChange={(event)=>{setEmail(event.target.value)}}
-          >
-        </input>
-        <input 
-          type='text' 
-          required 
-          placeholder='Digite sua senha'
-          value={senha}
-          onChange={(event)=>{setSenha(event.target.value)}}
-          >
-        </input>
-        <button type='submit'>
-          Cadastrar
-        </button>
-      </form>
+          <input 
+            type='email' 
+            required 
+            placeholder='Digite teu email'
+            value={email}
+            onChange={(event)=>{setEmail(event.target.value)}}
+          />
+          
+          <input 
+            type='password' 
+            required 
+            placeholder='Digite sua senha'
+            value={senha}
+            onChange={(event)=>{setSenha(event.target.value)}}
+          />
+          
+          <button type='submit'>
+            Cadastrar
+          </button>
+        </form>
     </div>
   );
 }
